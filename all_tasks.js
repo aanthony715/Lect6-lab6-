@@ -1,8 +1,7 @@
-
 const syncRequest = require('sync-request');
 const fs = require('fs');
 
-console.log('=== ЛАБОРАТОРНАЯ РАБОТА 4 ===\n');
+console.log('=== Р›РђР‘РћР РђРўРћР РќРђРЇ Р РђР‘РћРўРђ 4 ===\n');
 
 
 // TASK 1
@@ -13,7 +12,7 @@ console.log('='.repeat(40));
 const url1 = 'http://perm.1gb.ru/txt/labrab04-1.txt';
 const file1 = './files/labrab04-1.txt';
 
-console.log('Скачиваем файл для task 1...');
+console.log('РЎРєР°С‡РёРІР°РµРј С„Р°Р№Р» РґР»СЏ task 1...');
 const response1 = syncRequest('GET', url1);
 
 if (!fs.existsSync('./files')) {
@@ -21,12 +20,12 @@ if (!fs.existsSync('./files')) {
 }
 
 fs.writeFileSync(file1, response1.getBody('utf8'));
-console.log('Файл сохранен: ' + file1 + '\n');
+console.log('Р¤Р°Р№Р» СЃРѕС…СЂР°РЅРµРЅ: ' + file1 + '\n');
 
 const content1 = fs.readFileSync(file1, 'utf8');
 const lines1 = content1.split('\n').filter(line => line.trim());
 
-console.log('Прочитано чисел: ' + lines1.length);
+console.log('РџСЂРѕС‡РёС‚Р°РЅРѕ С‡РёСЃРµР»: ' + lines1.length);
 
 const findMaxTwoDigitForIndex = (numbers) => {
     let max = -1;
@@ -100,7 +99,7 @@ console.log('1.5 Math.max:     ' + result1_5);
 const twoDigitNums = lines1
     .map(n => parseInt(n))
     .filter(n => n >= 10 && n <= 99);
-console.log('\nДвузначные числа: ' + twoDigitNums.sort((a, b) => a - b).join(', '));
+console.log('\nР”РІСѓР·РЅР°С‡РЅС‹Рµ С‡РёСЃР»Р°: ' + twoDigitNums.sort((a, b) => a - b).join(', '));
 
 console.log('\n' + '='.repeat(40) + '\n');
 
@@ -113,10 +112,10 @@ console.log('='.repeat(40));
 const url2 = 'http://perm.1gb.ru/txt/labrab04-2.txt';
 const file2 = './files/labrab04-2.txt';
 
-console.log('Скачиваем файл для task 2...');
+console.log('РЎРєР°С‡РёРІР°РµРј С„Р°Р№Р» РґР»СЏ task 2...');
 const response2 = syncRequest('GET', url2);
 fs.writeFileSync(file2, response2.getBody('utf8'));
-console.log('Файл сохранен: ' + file2 + '\n');
+console.log('Р¤Р°Р№Р» СЃРѕС…СЂР°РЅРµРЅ: ' + file2 + '\n');
 
 const content2 = fs.readFileSync(file2, 'utf8');
 const allLines2 = content2.split('\n').filter(line => line.trim());
@@ -128,7 +127,7 @@ const matrix = allLines2.map(line => {
         .filter(num => !isNaN(num));
 });
 
-console.log('Прочитано строк: ' + matrix.length);
+console.log('РџСЂРѕС‡РёС‚Р°РЅРѕ СЃС‚СЂРѕРє: ' + matrix.length);
 
 let countAllOddRows = 0;
 for (let i = 0; i < matrix.length; i++) {
@@ -148,7 +147,7 @@ for (let i = 0; i < matrix.length; i++) {
     }
 }
 
-console.log('\n2.1 Строк со всеми нечетными числами: ' + countAllOddRows);
+console.log('\n2.1 РЎС‚СЂРѕРє СЃРѕ РІСЃРµРјРё РЅРµС‡РµС‚РЅС‹РјРё С‡РёСЃР»Р°РјРё: ' + countAllOddRows);
 
 let maxSum = -1;
 let firstIndex = -1;
@@ -169,12 +168,12 @@ for (let i = 0; i < matrix.length; i++) {
     }
 }
 
-console.log('2.2 Первый индекс строки с макс. суммой нечетных: ' + firstIndex);
+console.log('2.2 РџРµСЂРІС‹Р№ РёРЅРґРµРєСЃ СЃС‚СЂРѕРєРё СЃ РјР°РєСЃ. СЃСѓРјРјРѕР№ РЅРµС‡РµС‚РЅС‹С…: ' + firstIndex);
 
 if (firstIndex >= 0) {
     const row = matrix[firstIndex];
-    console.log('   Строка ' + firstIndex + ': [' + row.join(', ') + ']');
-    console.log('   Сумма нечетных: ' + maxSum);
+    console.log('   РЎС‚СЂРѕРєР° ' + firstIndex + ': [' + row.join(', ') + ']');
+    console.log('   РЎСѓРјРјР° РЅРµС‡РµС‚РЅС‹С…: ' + maxSum);
 }
 
 console.log('\n' + '='.repeat(40) + '\n');
@@ -187,10 +186,10 @@ console.log('='.repeat(40));
 const url3 = 'http://perm.1gb.ru/txt/labrab04-3.txt';
 const file3 = './files/labrab04-3.txt';
 
-console.log('Скачиваем файл для task 3...');
+console.log('РЎРєР°С‡РёРІР°РµРј С„Р°Р№Р» РґР»СЏ task 3...');
 const response3 = syncRequest('GET', url3);
 fs.writeFileSync(file3, response3.getBody('utf8'));
-console.log('Файл сохранен: ' + file3 + '\n');
+console.log('Р¤Р°Р№Р» СЃРѕС…СЂР°РЅРµРЅ: ' + file3 + '\n');
 
 const content3 = fs.readFileSync(file3, 'utf8');
 const allLines3 = content3.split('\n').filter(line => line.trim());
@@ -207,10 +206,10 @@ for (const line of allLines3) {
     }
 }
 
-console.log('Прочитано языков: ' + languages.length);
+console.log('РџСЂРѕС‡РёС‚Р°РЅРѕ СЏР·С‹РєРѕРІ: ' + languages.length);
 
 
-console.log('\n1. Языки по алфавиту (по возрастанию):');
+console.log('\n1. РЇР·С‹РєРё РїРѕ Р°Р»С„Р°РІРёС‚Сѓ (РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ):');
 const sortedAlphabetically = [...languages].sort((a, b) =>
     a.name.localeCompare(b.name)
 );
@@ -220,8 +219,8 @@ sortedAlphabetically.forEach(lang => {
 });
 
 
-console.log('\n2. Языки по убыванию рейтинга:');
-console.log('Рейтинг  |  Название');
+console.log('\n2. РЇР·С‹РєРё РїРѕ СѓР±С‹РІР°РЅРёСЋ СЂРµР№С‚РёРЅРіР°:');
+console.log('Р РµР№С‚РёРЅРі  |  РќР°Р·РІР°РЅРёРµ');
 console.log('-'.repeat(30));
 
 const sortedByRating = [...languages].sort((a, b) => b.rating - a.rating);
@@ -231,5 +230,5 @@ sortedByRating.forEach(lang => {
     console.log(ratingStr + '  |  ' + lang.name);
 });
 
-console.log('\n' + '='.repeat(40));
-console.log('ВСЕ ЗАДАНИЯ ВЫПОЛНЕНЫ!');
+
+
